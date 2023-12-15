@@ -100,7 +100,7 @@ export const updateClass = async(req, res) =>{
                 }
             });
         }else{
-            if(req.userId !== class.userId) return res.status(403).json({msg: "Akses terlarang"});
+            if(req.userId !== myClass.userId) return res.status(403).json({msg: "Akses terlarang"});
             await Class.update({classname, description, visibility},{
                 where:{
                     [Op.and]:[{id: myClass.id}, {userId: req.userId}]
@@ -129,7 +129,7 @@ export const deleteClass = async(req, res) =>{
                 }
             });
         }else{
-            if(req.userId !== class.userId) return res.status(403).json({msg: "Akses terlarang"});
+            if(req.userId !== myClass.userId) return res.status(403).json({msg: "Akses terlarang"});
             await Class.destroy({
                 where:{
                     [Op.and]:[{id: myClass.id}, {userId: req.userId}]
