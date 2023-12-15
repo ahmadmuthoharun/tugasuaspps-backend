@@ -5,7 +5,7 @@ import {Op} from "sequelize";
 export const getClasses = async (req, res) =>{
     try {
         let response;
-        if(req.role === "admin"){
+        if(req.role === "admin","user"){
             response = await Class.findAll({
                 attributes:['uuid','classname','description','visibility'],
                 include:[{
