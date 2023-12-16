@@ -1,7 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
 import Users from "./UserModel.js";
-import Classes from "./ClassModel.js";
 
 const {DataTypes} = Sequelize;
 
@@ -77,13 +76,6 @@ const Questions = db.define('question',{
             notEmpty: true
         }
     },
-    classId:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate:{
-            notEmpty: true
-        }
-    },
     userId:{
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -95,9 +87,7 @@ const Questions = db.define('question',{
     freezeTableName: true
 });
 
-Classes.hasMany(Questions);
 Users.hasMany(Questions);
-Questions.belongsTo(Classes, {foreignKey: 'classId'});
 Questions.belongsTo(Users, {foreignKey: 'userId'});
 
 export default Questions;

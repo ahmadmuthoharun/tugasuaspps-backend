@@ -3,8 +3,8 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "Ahmad Muthoharun",
-    "email": "admina@gmail.com",
+    "name": "Ahmad Fuad I.",
+    "email": "dosen1@gmail.com",
     "password": "123456",
     "confPassword": "123456",
     "role": "admin"
@@ -16,19 +16,19 @@ GET http://localhost:5000/users
 
 ###
 // get Single User
-GET http://localhost:5000/users/ad15d9fa-1684-464e-a237-82980d88ebad
+GET http://localhost:5000/users/2883b0d7-4c70-4702-a16f-c9bce775d5fa
 
 ###
 // Update a user
-PATCH http://localhost:5000/users/ad15d9fa-1684-464e-a237-82980d88ebad
+PATCH http://localhost:5000/users/2883b0d7-4c70-4702-a16f-c9bce775d5fa
 Content-Type: application/json
 
 {
-    "name": "Ahmad M",
-    "email": "admin@gmail.com",
+    "name": "Muhammad Hafidh A.",
+    "email": "mahasiswa2@gmail.com",
     "password": "",
     "confPassword": "",
-    "role": "admin"
+    "role": "user"
 }
 
 ###
@@ -36,22 +36,22 @@ Content-Type: application/json
 DELETE http://localhost:5000/users/ad15d9fa-1684-464e-a237-82980d88ebad
 
 ###
-// Login Admin
+// Login Dosen
 POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email": "admina@gmail.com",
+    "email": "dosen@gmail.com",
     "password": "123456"
 }
 
 ###
-// Login User
+// Login Mahasiswa
 POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email": "admin2@gmail.com",
+    "email": "mahasiswa1@gmail.com",
     "password": "123456"
 }
 
@@ -68,7 +68,7 @@ DELETE http://localhost:5000/logout
 GET http://localhost:5000/classes
 
 ###
-// POST Data Product
+// POST Data Class
 POST http://localhost:5000/classes
 Content-Type: application/json
 
@@ -78,35 +78,35 @@ Content-Type: application/json
     "visibility": "show"
 }
 
+###
+// get All Questions
+GET http://localhost:5000/questions
 
 ###
-// get All Products
-GET http://localhost:5000/products
+// get All Questions
+GET http://localhost:5000/questions
 
 ###
-// POST Data Product
-POST http://localhost:5000/products
+// POST Data Question
+POST http://localhost:5000/questions
 Content-Type: application/json
 
 {
-    "name": "Product 7",
-    "price": 14000
+    "question_text": "question_text",
+    "topic": "topic",
+    "difficulty": "difficulty",
+    "answer_text_1": "answer_text_1",
+    "answer_text_2": "answer_text_2",
+    "answer_text_3": "answer_text_3",
+    "answer_text_4": "answer_text_4",
+    "answer_text_5": "answer_text_5"
 }
 
-###
-// get Single Product
-GET http://localhost:5000/products/bb3ec41f-9bdf-4b21-8fe0-6bcda64bbd33
 
 ###
-// POST Data Product
-PATCH http://localhost:5000/products/bb3ec41f-9bdf-4b21-8fe0-6bcda64bbd33
-Content-Type: application/json
-
-{
-    "name": "Product 6 Up",
-    "price": 145500
-}
+// get Single Question
+GET http://localhost:5000/questions/e2ad1a0a-0131-41ac-a70c-4777e24e2dfd
 
 ###
-// Delete Data Product
-DELETE http://localhost:5000/products/bb3ec41f-9bdf-4b21-8fe0-6bcda64bbd33
+// Delete Data Question
+DELETE http://localhost:5000/questions/e2ad1a0a-0131-41ac-a70c-4777e24e2dfd
